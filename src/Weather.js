@@ -19,13 +19,13 @@ export default function Weather() {
             <input type="submit" value="Search" className="btn btn-primary" />
           </div>
         </div>
-        <h1>New York</h1>
+        <h1 className="city">New York</h1>
         <ul>
           <li>Last updated: Wednesday 10:00</li>
           <li>Partly Cloudy</li>
         </ul>
         <div className="row">
-          <div className="col-6">
+          <div className="col-sm-6 prospects">
             <img src={image} alt="sun" />
             <div className="temp">19</div>
             <span className="units">

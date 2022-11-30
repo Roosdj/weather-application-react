@@ -1,3 +1,65 @@
 .Weather .container {
-  border: 1px solid black;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.App {
+  font-family: sans-serif;
+  margin: 20px;
+  max-width: 600px;
+}
+
+.Weather h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 10px, 10px, 0px, 12px;
+}
+
+.Weather ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px 0px 0px 10px;
+}
+
+.Weather .city {
+  padding: 10px 10px 0px 10px;
+}
+
+.Weather img {
+  width: 100px;
+  position: relative;
+  top: -20px;
+}
+
+.Weather .temp {
+  font-size: 70px;
+  display: inline;
+}
+
+.Weather .units {
+  top: -40px;
+  position: relative;
+}
+
+.Weather .units a {
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .Weather img {
+    display: none;
+  }
+
+  .Weather .temp {
+    font-size: 50px;
+  }
+
+  .Weather ul {
+    font-size: 15px;
+  }
+
+  .Weather .units a {
+    font-size: 12px;
+  }
 }

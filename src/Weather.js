@@ -20,9 +20,8 @@ export default function Weather() {
           </div>
         </div>
         <h1 className="city">New York</h1>
-        <ul>
+        <ul className="time">
           <li>Last updated: Wednesday 10:00</li>
-          <li>Partly Cloudy</li>
         </ul>
         <div className="row">
           <div className="col-sm-6 prospects">
@@ -33,8 +32,9 @@ export default function Weather() {
               <a href="https://www.shecodes.io/">°F</a>
             </span>
           </div>
-          <div className="col-6">
+          <div className="col-6 mt-3">
             <ul>
+              <li>Partly Cloudy</li>
               <li>Humidity: 80%</li>
               <li>Wind: 10km/h</li>
             </ul>

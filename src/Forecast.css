@@ -1,0 +1,13 @@
+.Forecast {
+  text-align: center;
+}
+
+.forecast-min {
+  opacity: 0.6;
+}
+
+.forecast-icon img {
+  width: 50px;
+  position: relative;
+  top: 0px;
+}

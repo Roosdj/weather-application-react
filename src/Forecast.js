@@ -1,37 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import FormattedDateForecast from "./FormattedDateForecast";
+import FormattedDataForecast from "./FormattedDataForecast";
 import "./Forecast.css";
 
 export default function Forecast(props) {
-  let [weatherDataForecast, setWeatherDataForecast] = useState({
-    ready: false,
-  });
+  let [weatherDataForecast, setWeatherDataForecast] = useState(null);
+  let [ready, setReady] = useState(null);
+
+  useEffect(() => {
+    setReady(false);
+  }, [props.city]);
 
   function handleDataForecast(response) {
     console.log(response.data);
     setWeatherDataForecast({
       ready: true,
-      icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`,
-      max: Math.round(response.data.daily[1].temperature.maximum),
-      min: Math.round(response.data.daily[1].temperature.minimum),
-      date: new Date(response.data.daily[1].time * 1000),
+      data: response.data.daily,
     });
+    setReady(true);
   }
 
-  if (weatherDataForecast.ready) {
+  if (ready) {
     return (
       <div className="Forecast">
         <div className="row">
           <div className="col">
-            <div className="forecast-day">
-              <FormattedDateForecast date={weatherDataForecast.date} />
-            </div>
-            <div className="forecast-icon">
-              <img src={weatherDataForecast.icon} alt="weather-icon" />
-            </div>
-            <span className="forecast-max">{weatherDataForecast.max}°</span>
-            <span className="forecast-min"> {weatherDataForecast.min}°</span>
+            <FormattedDataForecast data={weatherDataForecast.data[1]} />
+          </div>
+          <div className="col">
+            <FormattedDataForecast data={weatherDataForecast.data[2]} />
+          </div>
+          <div className="col">
+            <FormattedDataForecast data={weatherDataForecast.data[3]} />
+          </div>
+          <div className="col">
+            <FormattedDataForecast data={weatherDataForecast.data[4]} />
+          </div>
+          <div className="col">
+            <FormattedDataForecast data={weatherDataForecast.data[5]} />
           </div>
         </div>
       </div>

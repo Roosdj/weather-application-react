@@ -13,3 +13,16 @@
 .lower-hr {
   margin-bottom: 30px;
 }
+
+@media (max-width: 576px) {
+  .Line p {
+    margin: 10px 0px 0px 0px;
+  }
+  .upper-hr {
+    display: none;
+  }
+
+  .lower-hr {
+    display: none;
+  }
+}

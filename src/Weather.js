@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo.js";
 import Forecast from "./Forecast.js";
+import Line from "./Line.js";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -9,6 +10,7 @@ export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
 
   function handleData(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       temperature: response.data.temperature.current,
@@ -16,6 +18,7 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+      clothesIcon: response.data.condition.icon,
       date: new Date(response.data.time * 1000),
       city: response.data.city,
     });
@@ -57,6 +60,7 @@ export default function Weather(props) {
             </div>
           </div>
           <WeatherInfo data={weatherData} />
+          <Line data={weatherData} />
           <Forecast city={weatherData.city} />
         </div>
       </div>

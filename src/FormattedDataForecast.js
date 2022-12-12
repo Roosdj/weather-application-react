@@ -1,4 +1,5 @@
 import React from "react";
+import "./Forecast.css";
 
 export default function FormattedDateForecast(props) {
   let date = new Date(props.data.time * 1000);

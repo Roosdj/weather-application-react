@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+.Line p {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Indie Flower", cursive;
+}
+
+.upper-hr {
+  margin-top: 0px;
+}
+
+.lower-hr {
+  margin-bottom: 30px;
+}

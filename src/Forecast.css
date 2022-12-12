@@ -11,3 +11,9 @@
   position: relative;
   top: 0px;
 }
+
+@media (max-width: 576px) {
+  .FormattedDateForecast {
+    display: none;
+  }
+}

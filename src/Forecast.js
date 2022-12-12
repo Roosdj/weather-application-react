@@ -12,7 +12,6 @@ export default function Forecast(props) {
   }, [props.city]);
 
   function handleDataForecast(response) {
-    console.log(response.data);
     setWeatherDataForecast({
       ready: true,
       data: response.data.daily,
